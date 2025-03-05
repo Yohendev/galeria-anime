@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+}
+
+body {
+    background-color: #5696FF;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o body ocupe pelo menos a altura da tela */
+}
+
+.conteudo-principal {
+    flex: 1; /* Faz o conteúdo principal ocupar o espaço restante */
+}
+
+.wg1 {
+    grid-column: span 1;
+}
+
+.wg2 {
+    grid-column: span 2;
+}
+
+.hg1 {
+    grid-row: span 1;
+}
+
+.hg2 {
+    grid-row: span 2;
+}
+
+.galeria {
+    width: 90%;
+    height: 90vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 45vh;
+}
+
+.single-galeria {
+    margin: 3px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.4);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    border-radius: 6px;
+}
+
+.img img {
+    position: relative;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+}
+
+.overflow {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(transparent, black);
+    opacity: 0.8;
+    transition: all 0.5s ease-in-out;
+    border-radius: 6px;
+}
+
+.conteudo {
+    position: absolute;
+    color: white;
+    border-left: 3px solid white;
+    padding: 0 10px;
+    bottom: 10px;
+    left: 10px;
+    transition: all 0.5s ease-in-out;
+}
+
+.conteudo h1 {
+    font-size: 18px;
+}
+
+.conteudo p {
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.single-galeria:hover div.overflow {
+    opacity: 1;
+}
+
+.single-galeria:hover div.conteudo {
+    bottom: 20px;
+}
+
+footer {
+    height: 50px;
+    background-color: #5696FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    position: relative; /* Remove o posicionamento absoluto */
+    width: 100%; /* Garante que o footer ocupe toda a largura */
+}
+
+@media screen and (max-width: 764px) {
+    .wg1 {
+        grid-column: span 2;
+    }
+
+    .hg2 {
+        grid-row: span 2;
+    }
+
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: calc(45vh / 2);
+    }
+
+    .conteudo h1 {
+        font-size: 14px;
+    }
+}

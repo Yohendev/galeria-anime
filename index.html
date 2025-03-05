@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Galeria Anime</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="imagex/png" href="imagens/icone-site.png">
+</head>
+<body>
+    <div class="conteudo-principal">
+        <div class="galeria">
+            <div class="single-galeria wg2 hg2">
+                <div class="img">
+                    <img src="imagens/mushoku.png" alt="">
+                </div>
+                <div class="overflow"></div>
+                <div class="conteudo">
+                    <h1>Mushoku Tensei</h1>
+                    <p><span class="data">04 de março de 2025</span><br> <b>Yohen</b></p>
+                </div>
+            </div>
+            <div class="single-galeria">
+                <div class="img">
+                    <img src="imagens/86.png" alt="">
+                </div>
+                <div class="overflow"></div>
+                <div class="conteudo">
+                    <h1>86 - Eighty Six</h1>
+                    <p><span class="data">04 de março de 2025</span><br> <b>Yohen</b></p>
+                </div>
+            </div>
+            <div class="single-galeria">
+                <div class="img">
+                    <img src="imagens/nnt.png" alt="">
+                </div>
+                <div class="overflow"></div>
+                <div class="conteudo">
+                    <h1>Nanatsu no Taizai</h1>
+                    <p><span class="data">04 de março de 2025</span><br> <b>Yohen</b></p>
+                </div>
+            </div>
+            <div class="single-galeria">
+                <div class="img">
+                    <img src="imagens/lycoris.png" alt="">
+                </div>
+                <div class="overflow"></div>
+                <div class="conteudo">
+                    <h1>Lycoris Recoil</h1>
+                    <p><span class="data">04 de março de 2025</span><br> <b>Yohen</b></p>
+                </div>
+            </div>
+            <div class="single-galeria">
+                <div class="img">
+                    <img src="imagens/attack.png" alt="">
+                </div>
+                <div class="overflow"></div>
+                <div class="conteudo">
+                    <h1>Attack on Titan</h1>
+                    <p><span class="data">04 de março de 2025</span><br> <b>Yohen</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <span>Copyright &copy; | Yohen</span>
+    </footer>
+
+    <script>
+        // Função para formatar a data no formato "dia de mês de ano"
+        function formatarData(data) {
+            const meses = [
+                "janeiro", "fevereiro", "março", "abril", "maio", "junho",
+                "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"
+            ];
+            const dia = data.getDate(); // Pega o dia do mês
+            const mes = meses[data.getMonth()]; // Pega o nome do mês
+            const ano = data.getFullYear(); // Pega o ano
+            return `${dia} de ${mes} de ${ano}`; // Retorna a data formatada
+        }
+
+        // Função para atualizar as datas
+        function atualizarDatas() {
+            const dataAtual = new Date(); // Pega a data atual
+            const elementosData = document.querySelectorAll('.data'); // Seleciona todos os elementos com a classe "data"
+
+            elementosData.forEach(elemento => {
+                elemento.textContent = formatarData(dataAtual); // Atualiza o conteúdo de cada elemento
+            });
+        }
+
+        // Atualizar as datas quando a página carregar
+        window.onload = atualizarDatas;
+    </script>
+</body>
+</html>
